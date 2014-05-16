@@ -109,10 +109,26 @@ class ofxKinectCommonBridge : protected ofThread {
 		return depthTex;
 	}
 
-
 	ofTexture &getColorTexture() {
 		return videoTex;
 	}
+
+	unsigned short getRawDepthValue(ofVec2f pos);
+
+	ofVec3f mapDepthToSkeleton(ofPoint depthPoint);
+	ofVec3f mapDepthToSkeleton(ofPoint depthPoint, ofShortPixels& depthImage);
+	vector<ofVec3f> mapDepthToSkeleton(vector<ofPoint>& depthPoints);
+	vector<ofVec3f> mapDepthToSkeleton(vector<ofPoint>& depthPoints, ofShortPixels& depthImage);
+	
+	ofVec2f mapColorToDepth(ofPoint colorPoint);
+	ofVec2f mapColorToDepth(ofPoint colorPoint, ofShortPixels& depthImage);
+	vector<ofVec2f> mapColorToDepth(vector<ofPoint>& colorPoints);
+	vector<ofVec2f> mapColorToDepth(vector<ofPoint>& colorPoints, ofShortPixels& depthImage);
+	
+	ofVec3f mapColorToSkeleton(ofPoint colorPoint);
+	ofVec3f mapColorToSkeleton(ofPoint colorPoint, ofShortPixels& depthImage);
+	vector<ofVec3f> mapColorToSkeleton(vector<ofPoint>& colorPoints);
+	vector<ofVec3f> mapColorToSkeleton(vector<ofPoint>& colorPoints, ofShortPixels& depthImage);
 
   private:
 
