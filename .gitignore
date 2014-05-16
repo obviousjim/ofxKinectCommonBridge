@@ -1,4 +1,3 @@
-libs/
 docs/
 
 *.depend
@@ -29,8 +28,6 @@ ipch/
 *.pdb
 *.idb
 *.pch
-Debug/
-Release/
 
 
 *~.xml
